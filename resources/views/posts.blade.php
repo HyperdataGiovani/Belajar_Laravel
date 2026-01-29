@@ -9,7 +9,7 @@
         Writer
         <a href="/authors/{{ $post->author->username }} " class="text-base text-pink-500 hover:underline">{{ $post->author->name }}</a>
         By
-        <a href="/authors/{{ $post->author->username }} " class="text-base text-pink-500 hover:underline">Incoming Category</a> | {{ $post->created_at->diffForHumans() }}
+        <a href="/categories/{{ $post->category->slug }} " class="text-base text-pink-500 hover:underline">{{ $post->category->name }}</a> | {{ $post->created_at->diffForHumans() }}
     </div>
     <p class="my-4 font-light">{{ Str::limit($post['body'], 50) }}</p>
     </p>
