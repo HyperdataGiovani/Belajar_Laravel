@@ -4,10 +4,22 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\LoginController;
 
-Route::get('/', function () {
-    return view('home', ['name' => 'Maki Zenin', 'title' => 'Home Page']);
-});
+// Route::get('/', function () {
+//     return view('home', ['title' => 'Home Page']);
+// });
+
+Route::get('/', [LoginController::class, 'login'])->name('login');
+
+Route::get('/home', [HomeController::class, 'index'])->name('index');
+Route::get('/create', [HomeController::class, 'create'])->name('user.create');
+Route::post('/store', [HomeController::class, 'store'])->name('user.store');
+Route::get('/edit/{id}', [HomeController::class, 'edit'])->name('user.edit');
+Route::put('/update/{id}', [HomeController::class, 'update'])->name('user.update');
+Route::delete('/delete/{id}', [HomeController::class, 'delete'])->name('user.delete');
 
 Route::get('/about', function () {
     return view('about', ['title'=> 'About Page']);

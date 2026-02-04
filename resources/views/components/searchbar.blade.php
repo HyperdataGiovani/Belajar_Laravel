@@ -7,7 +7,7 @@
             @if(request('author'))
             <input type="hidden" name="author" value="{{ request('author') }}">
             @endif
-            <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
+            <div class="flex items-center mx-auto mb-3 space-y-4  sm:flex sm:space-y-0">
                 <div class="relative w-full">
                     <label for="search"
                         class="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Search</label>
@@ -25,6 +25,11 @@
                 <div>
                     <button type="submit"
                         class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Enter</button>
+                </div>
+                <div class="ml-3 whitespace-nowrap items-right">
+                <a href="{{ route('user.create') }}">
+                <x-button>Create</x-button>
+                </a>
                 </div>
             </div>
         </form>

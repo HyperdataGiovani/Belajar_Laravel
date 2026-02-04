@@ -15,45 +15,45 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'username' => 'yuta-okkotsu',
-            'name' => 'Yuta Okkotsu',
-            'email' => 'yuta@jujutsu.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('rika'),
-            'remember_token' => Str::random(10)
-        ]);
-        User::create([
-            'username' => 'maki-zenin',
-            'name' => 'Maki Zenin',
-            'email' => 'maki@jujutsu.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('surgawi'),
-            'remember_token' => Str::random(10)
-        ]);
-        User::create([
-            'username' => 'gojo-satoru',
-            'name' => 'Gojo Satoru',
-            'email' => 'gojo@jujutsu.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('sixeyes'),
-            'remember_token' => Str::random(10)
-        ]);
-        User::create([
-            'username' => 'sukuna',
-            'name' => 'Sukuna',
-            'email' => 'sukuna@jujutsu.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('dismantle'),
-            'remember_token' => Str::random(10)
-        ]);
-        User::create([
-            'username' => 'mahoraga',
-            'name' => 'Mahoraga',
-            'email' => 'mahoraga@jujutsu.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('siladivine'),
-            'remember_token' => Str::random(10)
-        ]);
+        // User::create([
+        //     'username' => 'yuta-okkotsu',
+        //     'name' => 'Yuta Okkotsu',
+        //     'email' => 'yuta@jujutsu.com',
+        //     'email_verified_at' => now(),
+        //     'password' => Hash::make('rika'),
+        //     'remember_token' => Str::random(10)
+        // ]);
+        // User::create([
+        //     'username' => 'maki-zenin',
+        //     'name' => 'Maki Zenin',
+        //     'email' => 'maki@jujutsu.com',
+        //     'email_verified_at' => now(),
+        //     'password' => Hash::make('surgawi'),
+        //     'remember_token' => Str::random(10)
+        // ]);
+        // User::create([
+        //     'username' => 'gojo-satoru',
+        //     'name' => 'Gojo Satoru',
+        //     'email' => 'gojo@jujutsu.com',
+        //     'email_verified_at' => now(),
+        //     'password' => Hash::make('sixeyes'),
+        //     'remember_token' => Str::random(10)
+        // ]);
+        // User::create([
+        //     'username' => 'sukuna',
+        //     'name' => 'Sukuna',
+        //     'email' => 'sukuna@jujutsu.com',
+        //     'email_verified_at' => now(),
+        //     'password' => Hash::make('dismantle'),
+        //     'remember_token' => Str::random(10)
+        // ]);
+        // User::create([
+        //     'username' => 'mahoraga',
+        //     'name' => 'Mahoraga',
+        //     'email' => 'mahoraga@jujutsu.com',
+        //     'email_verified_at' => now(),
+        //     'password' => Hash::make('siladivine'),
+        //     'remember_token' => Str::random(10)
+        // ]);
     }
 }
