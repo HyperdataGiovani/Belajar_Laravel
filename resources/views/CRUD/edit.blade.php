@@ -35,11 +35,18 @@
                     class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-gray-700 text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all placeholder-gray-500"
                     placeholder="*******" >
             </div>
+            <div>
+                    <label for="password" class="block mb-2 text-sm font-semibold text-gray-300">Image</label>
+                    <input type="file" id="image" name="image" class="py-4" value="{{ $data->image }}">
+                    @error('image')
+                        <small>{{ $message }}</small>
+                    @enderror
+                </div>
             <div class="flex items-center justify-end gap-4 mt-8 pt-4 border-t border-gray-700">
                 <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3 rounded-xl font-bold shadow-lg shadow-indigo-500/20 transition-all transform active:scale-95">
                     Save
                 </button>
-                <a href="/" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">
+                <a href="/admin/home" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">
                     Cancel
                 </a>
             </div>

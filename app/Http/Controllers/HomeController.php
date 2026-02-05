@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
@@ -25,9 +26,16 @@ class HomeController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required',
+            'image' => 'required|mimes:png,jpg,jpeg|max:10240'
         ]);
 
         if($validator->fails()) return redirect()->back()->withInput()->withErrors($validator);
+
+        $image = $request->file('image');
+        $filename = date('Y-m-d').$image->getClientOriginalName();
+        $path = '/image/photo_user'.$filename;
+
+        Storage::disk('public')->put($path, file_get_contents($image));
 
         $data['username'] = $request->username;
         $data['name'] = $request->name;
@@ -35,6 +43,7 @@ class HomeController extends Controller
         $data['email_verified_at'] = now();
         $data['password'] = Hash::make($request->password);
         $data['remember_token'] = Str::random(10);
+        $data['image'] = $filename;
 
         User::create($data);
 
@@ -65,6 +74,7 @@ class HomeController extends Controller
         $data['password'] = Hash::make($request->password);
         }
         $data['remember_token'] = Str::random(10);
+        $data['image'] = 
 
         User::whereId($id)->update($data);
 

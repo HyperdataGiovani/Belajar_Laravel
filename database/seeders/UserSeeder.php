@@ -15,14 +15,14 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::create([
-        //     'username' => 'yuta-okkotsu',
-        //     'name' => 'Yuta Okkotsu',
-        //     'email' => 'yuta@jujutsu.com',
-        //     'email_verified_at' => now(),
-        //     'password' => Hash::make('rika'),
-        //     'remember_token' => Str::random(10)
-        // ]);
+        User::create([
+            'username' => 'yuta-okkotsu',
+            'name' => 'Yuta Okkotsu',
+            'email' => 'yuta@jujutsu.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('yuta'),
+            'remember_token' => Str::random(10)
+        ]);
         // User::create([
         //     'username' => 'maki-zenin',
         //     'name' => 'Maki Zenin',
