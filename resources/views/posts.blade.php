@@ -1,4 +1,5 @@
 <x-layout>
+    <title>Posts</title>
     <x-slot:title>{{ $title }}</x-slot:title>
     <div class="py-4 px-4 mx-auto max-w-screen-xl lg:px-6">
         <div class="grid gap-8 lg:grid-cols-2"></div>

@@ -1,4 +1,5 @@
 <x-layout>
+    <title>One Post</title>
     <x-slot:title>{{ $title }}</x-slot:title>
 <article class="py-8 max-w-screen-md">
     <h2 class="mb-1 text-3xl tracking-tight font-bold text-white-900 hover:underline">{{ $post['title'] }}</h2>

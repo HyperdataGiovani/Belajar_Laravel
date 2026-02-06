@@ -11,14 +11,22 @@ use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
-    public function index(){
-        $data = User::get();
+    public function index(Request $request){
+        $data = new User;
 
-        return view('home', ['title' => 'Home'], compact('data')); 
+    if($request->get('search')){
+        $data = $data->where('username', 'LIKE', '%'. $request->get('search') .'%')
+        ->orWhere('name', 'LIKE', '%'. $request->get('search') .'%')
+        ->orWhere('email', 'LIKE', '%'. $request->get('search') .'%');
+    }
+
+    $data = $data->get();
+
+        return view('home', ['title' => 'Home'], compact('data', 'request')); 
     }
 
     public function create(){
-        return view('CRUD/create', ['title' => 'New User']);
+        return view('CRUD/create', ['title' => 'Add New User']);
     }
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
@@ -33,7 +41,7 @@ class HomeController extends Controller
 
         $image = $request->file('image');
         $filename = date('Y-m-d').$image->getClientOriginalName();
-        $path = '/image/photo_user'.$filename;
+        $path = '/image/photo_user/'.$filename;
 
         Storage::disk('public')->put($path, file_get_contents($image));
 

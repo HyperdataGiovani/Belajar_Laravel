@@ -1,12 +1,6 @@
 <div class="py-8 px-4 mx-auto max-w-screen-xl lg:px-6">
     <div class="mx-auto max-w-screen-md sm:text-center">
-        <form>
-            @if(request('category'))
-            <input type="hidden" name="category" value="{{ request('category') }}">
-            @endif
-            @if(request('author'))
-            <input type="hidden" name="author" value="{{ request('author') }}">
-            @endif
+        <form action="{{ route('admin.index') }}" method="GET">
             <div class="flex items-center mx-auto mb-3 space-y-4  sm:flex sm:space-y-0">
                 <div class="relative w-full">
                     <label for="search"
@@ -20,7 +14,7 @@
                     </div>
                     <input
                         class="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                        placeholder="Search.." type="search" id="search" name="search" autocomplete="off">
+                        placeholder="Search.." type="search" id="search" name="search" autocomplete="off" value="{{ request('search') }}">
                 </div>
                 <div>
                     <button type="submit"

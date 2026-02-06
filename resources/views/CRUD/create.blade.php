@@ -1,4 +1,5 @@
 <x-layout>
+    <title>Add User</title>
     <x-slot:title>{{ $title }}</x-slot:title>
     <div class="bg-slate-900 py-10 px-6 min-h-screen flex items-center justify-center">
         <div class="max-w-2xl w-full bg-slate-800 shadow-2xl rounded-2xl border border-gray-700 p-8">
@@ -8,13 +9,14 @@
                 <p class="text-gray-400 text-sm">Fill in the details below to register a new account.</p>
             </div>
 
-            <form action="{{ route('admin.user.store') }}" method="POST" class="space-y-6" enctype="multipart/form-data">
+            <form action="{{ route('admin.user.store') }}" method="POST" class="space-y-6"
+                enctype="multipart/form-data">
                 @csrf
                 <div>
                     <label for="username" class="block mb-2 text-sm font-semibold text-gray-300">Username</label>
                     <input type="text" id="username" name="username"
                         class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-gray-700 text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all placeholder-gray-500"
-                        placeholder="example" required>
+                        placeholder="name" required>
                     <!-- @error('username')
                         <small>{{ $message }}</small>
                     @enderror -->
@@ -23,7 +25,7 @@
                     <label for="name" class="block mb-2 text-sm font-semibold text-gray-300">Full Name</label>
                     <input type="text" id="name" name="name"
                         class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-gray-700 text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all placeholder-gray-500"
-                        placeholder="Just Example" required>
+                        placeholder="Example Name" required>
                     <!-- @error('name')
                         <small>{{ $message }}</small>
                     @enderror -->
@@ -32,7 +34,7 @@
                     <label for="email" class="block mb-2 text-sm font-semibold text-gray-300">Email Address</label>
                     <input type="email" id="email" name="email"
                         class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-gray-700 text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all placeholder-gray-500"
-                        placeholder="example@example.com" required>
+                        placeholder="name@example.com" required>
                     <!-- @error('email')
                         <small>{{ $message }}</small>
                     @enderror -->
@@ -50,7 +52,7 @@
                     <label for="password" class="block mb-2 text-sm font-semibold text-gray-300">Image</label>
                     <input type="file" id="image" name="image" class="py-4">
                     @error('image')
-                        <small>{{ $message }}</small>
+                    <small>{{ $message }}</small>
                     @enderror
                 </div>
                 <div class="flex items-center justify-end gap-4 mt-8 pt-4 border-t border-gray-700">
@@ -58,7 +60,7 @@
                         class="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3 rounded-xl font-bold shadow-lg shadow-indigo-500/20 transition-all transform active:scale-95">
                         Save User
                     </button>
-                    <a href="/admin/home" class="text-gray-400 hover:text-white transition-colors text-sm font-medium">
+                    <a href="/admin/home" class="bg-red-600 hover:bg-red-500 text-white px-8 py-3 rounded-xl font-bold shadow-lg shadow-red -500/20 transition-all transform active:scale-95">
                         Cancel
                     </a>
                 </div>
